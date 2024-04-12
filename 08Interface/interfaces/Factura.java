@@ -42,7 +42,7 @@ public class Factura implements Imprimible{
 	 * Devuelve un mensaje con la suma de las propiedades
 	 */
 	@Override
-	public void informeLargo() {
+	public void generarInformeLargo() {
 		int sumaPropiedades = this.numFactura + this.codigoCliente;
 		
 		System.out.println("Valor de la propiedad numero de factura + codigo de cliente: " + 
@@ -54,7 +54,7 @@ public class Factura implements Imprimible{
 	 * Devuelve un mensaje con info de una propiedad
 	 */
 	@Override
-	public void informeCorto() {
+	public void generarInformeCorto() {
 		System.out.println("Propiedad del valor numero de factura: " + this.getNumFactura());
 		
 	}

@@ -9,14 +9,11 @@ public class GestionDeImpresion {
 		Pagina pagina = new Pagina(200,1800);
 		Factura factura = new Factura(2,103);
 		
-		/**
-		 * Calleo metodos
-		 */
-		pagina.informeCorto();
-		pagina.informeLargo();
+		//Pruebo que funciona
+		pagina.generarInformeCorto();
+		pagina.generarInformeLargo();
 		
-		factura.informeCorto();
-		factura.informeLargo();
+		factura.generarInformeCorto();
+		factura.generarInformeLargo();
 	}
-
 }

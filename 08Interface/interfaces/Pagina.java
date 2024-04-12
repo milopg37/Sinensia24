@@ -41,7 +41,7 @@ public class Pagina implements Imprimible{
 	 * Devuelve un mensaje con la suma de las propiedades
 	 */
 	@Override
-	public void informeLargo() {
+	public void generarInformeLargo() {
 		int sumaPropiedades = this.numLineas + this.numPaginas;
 		
 		System.out.println("Valor de la propiedad numero de paginas + numero de lineas: "
@@ -53,7 +53,7 @@ public class Pagina implements Imprimible{
 	 * Devuelve un mensaje con info de una propiedad
 	 */
 	@Override
-	public void informeCorto() {
+	public void generarInformeCorto() {
 		System.out.println("Propiedad del valor numero de paginas: " + this.numPaginas);
 	}
 

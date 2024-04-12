@@ -2,6 +2,6 @@ package interfaces;
 
 public interface Imprimible {
 	
-	public abstract void informeLargo();
-	public abstract void informeCorto();
+	public abstract void generarInformeLargo();
+	public abstract void generarInformeCorto();
 }
