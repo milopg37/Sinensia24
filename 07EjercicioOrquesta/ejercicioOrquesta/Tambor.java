@@ -8,8 +8,8 @@ public class Tambor extends Instrumento{
 		super();
 	}
 
-	public Tambor(double tamanho) {
-		super();
+	public Tambor(String nombre, double tamanho) {
+		super(nombre, "PERCUSION");
 		this.tamanho = tamanho;
 	}
 

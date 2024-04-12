@@ -9,8 +9,8 @@ public class Flauta extends Instrumento{
 		super();
 	}
 
-	public Flauta(String modelo) {
-		super();
+	public Flauta(String nombre, String modelo) {
+		super(nombre, "VIENTO");
 		this.modelo = modelo;
 	}
 

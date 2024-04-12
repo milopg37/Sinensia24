@@ -1,42 +1,51 @@
 package ejercicioOrquesta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Orquesta {
 
 	public static void main(String[] args) {
-		
+
 		/**
 		 * Creo una instancia de cada instrumento
 		 */
-		Flauta flautaTravesera = new Flauta("modeloNordica");
-		flautaTravesera.setNombre("flautin");
-		flautaTravesera.setTipoInstrumento("flauta");
 		
-		Guitarra lesPaulGuitarra = new Guitarra(6);
-		lesPaulGuitarra.setNombre("paul");
-		lesPaulGuitarra.setTipoInstrumento("guitarra");
+		List<Instrumento> listaInstrumentos = crearLista();
 		
-		GuitarraElectrica fender = new GuitarraElectrica(13);
-		fender.setNombre("fender");
-		fender.setTipoInstrumento("guitarraElectrica");
-		fender.setNumCuerdas(6);
+		for (Instrumento instrumento : listaInstrumentos) {
+			instrumento.afinar();
+		}
+
+		for (Instrumento instrumento : listaInstrumentos) {
+			instrumento.verOrigen();
+		}
 		
-		Tambor bongosTambor = new Tambor(40.2);
-		bongosTambor.setNombre("bongos");
-		bongosTambor.setTipoInstrumento("tambor");
+		for (Instrumento instrumento : listaInstrumentos) {
+			if (instrumento instanceof Tambor) {
+				((Tambor) instrumento).aporrear();
+			}else {
+				instrumento.tocar();
+			}
+		}
 		
-		//Pruebo que todo funciona
-		flautaTravesera.tocar();
-		lesPaulGuitarra.tocar();
-		fender.tocar();
-		bongosTambor.aporrear();
-		flautaTravesera.afinar();
-		lesPaulGuitarra.afinar();
-		fender.afinar();
-		bongosTambor.afinar();
-		
-		flautaTravesera.verOrigen();
-		lesPaulGuitarra.verOrigen();
-		fender.verOrigen();
-		bongosTambor.verOrigen();
 	}
+
+	private static List<Instrumento> crearLista() {
+		List<Instrumento> listaInstrumentos = new ArrayList<>();
+		Instrumento flautaTravesera = new Flauta("flautin", "modeloNordica");
+
+		Instrumento lesPaulGuitarra = new Guitarra("paul", 6);
+
+		Instrumento fender = new GuitarraElectrica("fender", 6, 13);
+
+		Instrumento bongosTambor = new Tambor("bongos", 40.2);
+		listaInstrumentos.add(flautaTravesera);
+		listaInstrumentos.add(lesPaulGuitarra);
+		listaInstrumentos.add(fender);
+		listaInstrumentos.add(bongosTambor);
+
+		return listaInstrumentos;
+	}
+	
 }

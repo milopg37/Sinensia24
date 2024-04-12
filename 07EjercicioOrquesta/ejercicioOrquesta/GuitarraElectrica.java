@@ -8,8 +8,8 @@ public class GuitarraElectrica extends Guitarra{
 		super();
 	}
 
-	public GuitarraElectrica(int potencia) {
-		super();
+	public GuitarraElectrica(String nombre, int cuerdas, int potencia) {
+		super(nombre, cuerdas);
 		this.potencia = potencia;
 	}
 
