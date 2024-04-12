@@ -33,6 +33,10 @@ public class Orquesta {
 		lesPaulGuitarra.afinar();
 		fender.afinar();
 		bongosTambor.afinar();
+		
+		flautaTravesera.verOrigen();
+		lesPaulGuitarra.verOrigen();
+		fender.verOrigen();
+		bongosTambor.verOrigen();
 	}
-
 }

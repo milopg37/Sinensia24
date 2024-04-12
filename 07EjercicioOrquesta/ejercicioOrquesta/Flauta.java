@@ -37,4 +37,16 @@ public class Flauta extends Instrumento{
 		System.out.println("Soplando la flauta: " + this.getNombre());
 		System.out.println("Modelo de la flauta: " + this.getModelo());
 	}
+
+	/**
+	 * Sobreescribe el método del padre
+	 * Añade el origen individual de la flauta
+	 */
+	@Override
+	public void verOrigen() {
+		super.verOrigen();
+		System.out.println("La primera flauta fue encontrada en Alemania con 43 000 años de antigüedad.");
+	}
+	
+	
 }

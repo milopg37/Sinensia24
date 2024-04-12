@@ -35,4 +35,16 @@ public class GuitarraElectrica extends Guitarra{
 	public void tocar() {
 		System.out.println("Tocando la guitarra electrica !");
 	}
+
+	/**
+	 * Sobreescribe el método del padre
+	 * Añade el origen individual de la guitarra - electrica
+	 */
+	@Override
+	public void verOrigen() {
+		super.verOrigen();
+		System.out.println("Es en 1920 cuando el ingeniero Lloyd Loard"
+				+ "crea la primera guitarra eléctrica en Estados Unidos."
+				+ "Trabajaba para la gran empresa de fabricación de instrumentos Gibson");
+	}
 }

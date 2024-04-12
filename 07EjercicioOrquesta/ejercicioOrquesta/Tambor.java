@@ -34,4 +34,14 @@ public class Tambor extends Instrumento{
 		System.out.println("Aporreando tambor " + this.getNombre());
 	}
 
+	/**
+	 * Sobreescribe el método del padre
+	 * Añade el origen individual del tambor
+	 */
+	@Override
+	public void verOrigen() {
+		super.verOrigen();
+		System.out.println("Según diversos estudios de investigación,"
+				+ "el origen del tambor es Africano, y se remonta a la prehistoria.");
+	}
 }

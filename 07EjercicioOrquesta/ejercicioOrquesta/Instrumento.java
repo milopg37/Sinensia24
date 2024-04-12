@@ -52,4 +52,13 @@ public class Instrumento {
 		System.out.println("Se ha afinado el tono del instrumento: " + this.nombre);
 	}
 	
+	/**
+	 * Este método genera un texto básico comentando el origen de los instrumentos
+	 */
+	public void verOrigen() {
+		System.out.println("Un instrumento musical es un sistema compuesto"
+				+ " por la combinación de uno o más sistemas resonantes"
+				+ " y medios para su vibración, construido con el fin de producir sonido");
+	}
+	
 }
