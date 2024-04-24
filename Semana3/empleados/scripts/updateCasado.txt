@@ -1,0 +1,7 @@
+USE dbpersonas;
+
+UPDATE `bdpersonas`.`empleados` SET `casado` = '1' WHERE (`id` = '1');
+UPDATE `bdpersonas`.`empleados` SET `casado` = '1' WHERE (`id` = '3');
+UPDATE `bdpersonas`.`empleados` SET `casado` = '1' WHERE (`id` = '5');
+UPDATE `bdpersonas`.`empleados` SET `casado` = '1' WHERE (`id` = '7');
+UPDATE `bdpersonas`.`empleados` SET `casado` = '1' WHERE (`id` = '9');

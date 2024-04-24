@@ -1,0 +1,10 @@
+USE dbpersonas;
+
+CREATE TABLE `bdpersonas`.`empleados` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `apellido` VARCHAR(45) NOT NULL,
+  `fecha_nacimiento` DATE NOT NULL,
+  `salario` INT NOT NULL,
+  `casado` TINYINT NOT NULL,
+  PRIMARY KEY (`id`));

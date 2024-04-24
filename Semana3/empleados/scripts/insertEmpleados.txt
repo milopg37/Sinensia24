@@ -1,0 +1,13 @@
+USE dbpersonas;
+
+INSERT INTO empleados (nombre, apellido, fecha_nacimiento, salario) VALUES
+('Juan', 'Pérez', '1990-05-15', 25000.00),
+('María', 'González', '1988-10-20', 28000.00),
+('Pedro', 'Sánchez', '1995-02-10', 30000.00),
+('Ana', 'Martínez', '1992-07-05', 22000.00),
+('Luis', 'López', '1985-12-30', 35000.00),
+('Elena', 'Rodríguez', '1993-04-25', 26000.00),
+('Carlos', 'Fernández', '1980-09-12', 21000.00),
+('Sara', 'Díaz', '1987-03-18', 29000.00),
+('Javier', 'Ruiz', '1991-08-22', 32000.00),
+('Laura', 'Jiménez', '1983-11-08', 27000.00);
