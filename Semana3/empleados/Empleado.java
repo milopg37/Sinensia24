@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Empleado {
 
@@ -93,6 +95,7 @@ public class Empleado {
 		
 		
 		
+		
 		System.out.println(str.toString());
 	}
 	
@@ -101,23 +104,32 @@ public class Empleado {
 	 * junto con salario mensual
 	 */
 	public void consultarSalarioMensual(){
-		Conexion conexion = Conexion.getInstance();
-		Connection connection = conexion.getConnection();
 		
 		String queryConsultaSalario = "SELECT salario"
 									+ " FROM empleados";
+		List<Integer> listaSalarios = new ArrayList<>();
+		
 		try {
-			  Statement stmt = connection.createStatement();
+			  Statement stmt = Conexion.getConnection().createStatement();
 	          ResultSet resultSet = stmt.executeQuery(queryConsultaSalario);
 	          
+	          while (resultSet.next()) {
+	        	
+	        	listaSalarios.add(resultSet.getInt("salario"));
+			}
 	          
-			
+	        //Ordeno de mayor a menor y muestreo
+	          Collections.sort(listaSalarios, Collections.reverseOrder());
+	          System.out.println("-- Salarios ordenador de mayor a menor --");
+	        	for (Integer salario : listaSalarios) {
+	        		System.out.print(salario + "€ ");	
+	        		System.out.println("Salario mensual: " + salario / 12 + " €");
+				}
 			
 		} catch (SQLException e) {
 			e.getMessage();
 			e.printStackTrace();
 		}
-		
 	}
 
 	/**
