@@ -14,8 +14,8 @@ public class Main {
 			
 			switch (opcion) {
 			case 1:
-				System.out.println("Has elegido consultar por apellido ..");
-				empleado.mostrarDatosEmpleadoPorApellido();
+				System.out.println("Has elegido modificar un empleado buscando por apellido ..");
+				empleado.mostrarDatosEmpleadoPorApellido("Martínez");
 				break;
 				
 			case 2:

@@ -1,13 +1,18 @@
 package semana3.empleados;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class Empleado {
 
@@ -87,16 +92,65 @@ public class Empleado {
 	}
 	
 	/**
+	 * Primera parte:
 	 * Al pasarle un apellido consulta y muestra todos los datos
-	 * de el/los empleados que tengan ese apellido en cuestion 
+	 * de el/los empleados que tengan ese apellido en cuestion
+	 * Segunda parte:
+	 * Una vez mostrado te da opcion a modificar ese empleado en cuestión
 	 */
-	public void mostrarDatosEmpleadoPorApellido() {
-		StringBuilder str = new StringBuilder();
+	public void mostrarDatosEmpleadoPorApellido(String apellidoABuscar) {
 		
+		Scanner sc = new Scanner(System.in);
 		
+		String querySelectPorApellido = "SELECT * FROM empleados WHERE apellido = '" + apellidoABuscar + "';";
 		
+		String queryUpdateEmpleado = "UPDATE empleados"
+									+ " SET nombre = '?',"
+									+ " apellido = '?',"
+									+ " salario = '?',"
+									+ " casado = '?'"
+									+ " WHERE apellido = '?' AND salario = '?';";
 		
-		System.out.println(str.toString());
+		try {
+			
+			PreparedStatement pstmt = Conexion.getConnection().prepareStatement(querySelectPorApellido);
+			PreparedStatement pstmt2 = Conexion.getConnection().prepareStatement(queryUpdateEmpleado);
+			
+			//Conexion.getConnection().setAutoCommit(false);//begin transaction
+			
+			ResultSet resultSet = pstmt.executeQuery(); //Ejecuto consulta
+			
+			
+			System.out.println("Empleados que tengan el apellido: " + apellidoABuscar);
+			while (resultSet.next()) {
+				System.out.println(resultSet.getString("nombre"));
+			}
+			
+			System.out.println("Introduzca nuevos valores para el empleado: ");
+			System.out.println("Orden: Nombre-Apellido-Salario-EstadoCivil");
+			
+			
+			for (int i = 0; i < 3; i++) {
+			
+				pstmt2.setString(1, sc.nextLine());
+				pstmt2.setString(2, sc.nextLine());
+				sc.nextLine();//Lectura falsa
+				pstmt2.setInt(3, sc.nextInt());
+				pstmt2.setInt(4, sc.nextInt());
+			}
+			
+			pstmt2.setString(5, apellidoABuscar);//Where
+			pstmt2.setInt(6, 22000);//Where
+			
+			pstmt2.executeQuery(); //Ejecuto update
+			
+			
+			//Conexion.getConnection().commit();//commit transaction
+		} catch (SQLException e) {
+			e.getMessage();
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
