@@ -130,14 +130,12 @@ public class Empleado {
 			System.out.println("Orden: Nombre-Apellido-Salario-EstadoCivil");
 			
 			
-			for (int i = 0; i < 3; i++) {
-			
 				pstmt2.setString(1, sc.nextLine());
 				pstmt2.setString(2, sc.nextLine());
 				sc.nextLine();//Lectura falsa
 				pstmt2.setInt(3, sc.nextInt());
 				pstmt2.setInt(4, sc.nextInt());
-			}
+			
 			
 			pstmt2.setString(5, apellidoABuscar);//Where
 			pstmt2.setInt(6, 22000);//Where
