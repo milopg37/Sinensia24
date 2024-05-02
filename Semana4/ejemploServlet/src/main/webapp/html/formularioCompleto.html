@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario HTML Completo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input, textarea, select {
+        width: calc(100% - 20px); /* Ajuste para compensar el padding */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    /* Detalle de color para los inputs */
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #8dc9f7;
+        box-shadow: 0 0 5px #8dc9f7;
+    }
+
+    /* Detalle de color para los checkbox y radios */
+    input[type="checkbox"]:checked + label,
+    input[type="radio"]:checked + label {
+        color: #4CAF50;
+    }
+</style>
+</head>
+<body>
+
+<form action="/ejemploServlet/ServletFormCompleto" method="post">
+    <label for="text">Input de Texto: Ingrese Nombre</label>
+    <input type="text" id="text" name="nombre">
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="number">Input Number: Ingrese Edad</label>
+    <input type="number" id="number" name="edad" min="18" max="70">
+
+    <label for="date">Fecha:</label>
+    <input type="date" id="date" name="date">
+
+    <label for="time">Hora:</label>
+    <input type="time" id="time" name="time">
+
+    <label for="checkbox">Checkboxes:</label>
+    <label for="checkbox">Come Sano?</label><br>
+    <input type="checkbox" id="checkbox" name="comidaCheck">
+    
+    <label for="checkbox">Hace Deporte?</label><br>
+    <input type="checkbox" id="checkbox" name="deporteCheck">
+  	
+    <label>Radio Buttons:</label>
+    <label for="radio1">Coche: </label><br>
+    <input type="radio" id="radio1" name="vehiculo" value="coche">
+
+	<label for="radio2">Moto: </label><br>
+    <input type="radio" id="radio2" name="vehiculo" value="moto">
+
+    <label for="textarea">Área de Texto: Descripción Personal</label>
+    <textarea id="textarea" name="textarea" rows="4"></textarea>
+
+    <label for="select">Hobbies:</label>
+    <select id="select" name="select">
+        <option value="bailar" name="bailar">Bailar</option>
+        <option value="cine" name="cine">Cine</option>
+        <option value="cantar" name="cantar">Cantar</option>
+    </select>
+
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>

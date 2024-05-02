@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333333;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+</head>
+<body>
+
+  <form action="/ejemploServlet/ServletFormulario2" method="POST">
+    <label>Ingrese nombre</label>
+    <input type="text" name="nombre">
+    <br>
+    <label>Ingrese edad</label>
+    <input type="text" name="edad">
+    <br>
+    <label>Ingrese número a probar</label>
+    <input type="number" name="numero">
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+  
+</body>
+</html>
