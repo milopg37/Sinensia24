@@ -39,4 +39,24 @@
     <servlet-name>BuscarSeccionServlet</servlet-name>
     <url-pattern>/BuscarSeccionServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarProductoServlet</display-name>
+    <servlet-name>EliminarProductoServlet</servlet-name>
+    <servlet-class>com.curso.controllers.EliminarProductoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarProductoServlet</servlet-name>
+    <url-pattern>/EliminarProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModificarPrecioServlet</display-name>
+    <servlet-name>ModificarPrecioServlet</servlet-name>
+    <servlet-class>com.curso.controllers.ModificarPrecioServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarPrecioServlet</servlet-name>
+    <url-pattern>/ModificarPrecioServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
