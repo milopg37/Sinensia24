@@ -1,0 +1,5 @@
+Crear proyecto Maven
+Incorporar depencidencies en el pom
+Crear folder META-INF en Resources
+Crear Persistence.xml en META-INF
+Crea packages en main
