@@ -1,0 +1,5 @@
+Ejercicio Noticias - Comentarios
+Crear estrucura de carpetas
+Crear los 3 primeros scripts sql para la BD
+A mayores para este ejercicio importar dependencies de JUnit 5
+Crear packaging para las ClassesTest
