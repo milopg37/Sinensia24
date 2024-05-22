@@ -1,0 +1,2 @@
+CREATE TABLE departamentos(id_dept INT NOT NULL,nombre VARCHAR(255),localidad VARCHAR(255),PRIMARY KEY(id_dept));
+CREATE TABLE empleados(id_emp INT NOT NULL PRIMARY KEY,nombre VARCHAR(255),fecha DATE,sueldo DOUBLE,id_dept INT,FOREIGN KEY(id_dept) REFERENCES departamentos(id_dept));

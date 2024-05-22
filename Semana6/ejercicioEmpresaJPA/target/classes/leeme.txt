@@ -1,0 +1,4 @@
+Crear META-INF/Persistence.xml
+Meter depependencies en el pom.xml
+Crear packaging para modelos & consultas (Desde una clase Ejecucion llamar todos los scripts)
+Crear dentro de META-INF los .sql con los scripts necesarios
