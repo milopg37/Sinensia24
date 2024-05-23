@@ -1,0 +1,37 @@
+RECURSO: curso
+
+Vamos a ofrecer un CRUD de cursos utilizando BD
+
+GET 	--> 	recuperar
+POST 	--> 	insertar
+PUT 	--> 	actualizar
+DELETE 	--> 	borrar
+
+http://localhost:8080/cursos/{codCurso}				GET: busca un curso
+http://localhost:8080/cursos/nuevo					POST: da de alta nuevo curso
+http://localhost:8080/cursos/rango					GET: devuelve cursos entre rango precios
+http://localhost:8080/cursos/delete/{codCurso}		GET: borra un curso y devuelve lista actualizada
+http://localhost:8080/cursos/udpdate{nuevaDuracion}	POST: actualiza duracion (horas) de un curso
+
+ORDEN DE CREACION:
+1- Crear proyecto (dependencies) (resources->sql->scripts) (leeme.txt)
+
+2- Definir modelo de datos (crear package y clases necesarias)
+
+3- Crear Acceso a Datos (package DAO) e interfaz que implemente JpaRepository
+
+4- Capa de la lógica de negocio, servicios
+	4.1 Crear la interfaz
+	4.2 Crear clase que implemente esa interfaz (incluir @Service) e instanciar DAO
+	
+5- Implementar el controller (com.curso.controller) (incluir @RestController) e instanciar @AutoWired el service de la entidad/clase
+
+6- Configuraciones
+	6.1 En la clase lanzadora añadir los packages que tienen clases con Spring Tags @
+		@EntityScan(basePackages = "")
+		@EnableJpaRepositories(basePackages = "")
+		@SpringBootApplication(scanBasePackages = {"", ""})
+		
+	6.2 En el application.properties incorporar las propiedades necesarias para poder trabajar con la BD
+		
+7- Realizar las request y probar desde Postman
