@@ -30,12 +30,12 @@ public class CursoController {
 		return servicio.altaCurso(curso);
 	}
 	
-	@GetMapping(value = "cursos/delete/{codCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Curso> deleteCurso(@RequestBody String codCurso) {
+	@DeleteMapping(value = "cursos/delete/{codCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Curso> deleteCurso(@PathVariable String codCurso) {
 		return servicio.deleteCurso(codCurso);
 	}
 	
-	@PostMapping(value = "cursos/udpdate{nuevaDuracion}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "cursos/update/{nuevaDuracion}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void updateCurso(@RequestBody Curso curso, @PathVariable("nuevaDuracion") int nuevaDuracion) {
 		servicio.updateHorasCurso(curso, nuevaDuracion);
 	}

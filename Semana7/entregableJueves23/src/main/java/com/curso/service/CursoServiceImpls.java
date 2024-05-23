@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.curso.dao.CursoDao;
 import com.curso.models.Curso;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class CursoServiceImpls implements CursoService {
 	
@@ -48,9 +50,10 @@ public class CursoServiceImpls implements CursoService {
 	 * Borra curso buscando por ID
 	 * Después devuelve la lista actualizada
 	 */
+	@Transactional
 	@Override
 	public List<Curso> deleteCurso(String codCurso) {
-		dao.deleteById(codCurso);
+		dao.deleteById(codCurso);;
 		return dao.findAll();
 	}
 
