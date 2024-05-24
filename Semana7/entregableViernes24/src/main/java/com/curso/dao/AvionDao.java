@@ -16,7 +16,7 @@ public interface AvionDao extends JpaRepository<Avion, String> {
 	 * Metodo
 	 * Contar el número total de horas de vuelo acumuladas por los aviones militares:
 	 */
-	@Query("SELECT SUM(a.horasVuelo) AS total_horas_militares FROM Avion a WHERE a.tipoAvion = 'Militar'")
+	@Query("SELECT SUM(a.horasVuelo) FROM Avion a WHERE a.tipo = 'Militar'")
 	Integer getTotalHorasByMilitares();
 	
 	
@@ -25,7 +25,7 @@ public interface AvionDao extends JpaRepository<Avion, String> {
 	 * Metodo
 	 * Obtener la capacidad total de pasajeros de todos los aviones de una aerolínea específica
 	 */
-	@Query("SELECT a.aerolinea, SUM(a.capacidad) AS capacidad_total_pasajeros FROM Avion a WHERE a.aerolinea = :aerolinea GROUP BY a.aerolinea")
+	@Query("SELECT SUM(a.capacidad) FROM Avion a WHERE a.aerolinea = :aerolinea")
 	Integer getTotalCapacidadAerolinea(@Param("aerolinea") String aerolinea);
 	
 	
@@ -34,7 +34,7 @@ public interface AvionDao extends JpaRepository<Avion, String> {
 	 * Metodo
 	 * Consultar todos los aviones comerciales activos
 	 */
-	@Query("SELECT a FROM Avion a WHERE a.tipoAvion = 'Comercial' AND a.estado = 'Activo'")
+	@Query("SELECT a FROM Avion a WHERE a.tipo = 'Comercial' AND a.estado = 'Activo'")
 	List<Avion> findAllComercialesActivos();
 	
 	

@@ -29,12 +29,12 @@ public class AvionController {
 	}
 	
 	@DeleteMapping(value = "avion/{idAvion}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Avion> deleteaAvion(String idAvion) {
+	public List<Avion> deleteaAvion(@PathVariable("idAvion") String idAvion) {
 		return servicio.deleteAvion(idAvion);
 	}
 	
-	@PutMapping(value = "avion", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updateAvion(@RequestBody Avion avion, @RequestBody int nuevaCapacidad) {
+	@PutMapping(value = "avion/{nuevaCapacidad}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updateAvion(@RequestBody Avion avion, @PathVariable("nuevaCapacidad") int nuevaCapacidad) {
 		servicio.updateAvion(avion, nuevaCapacidad);
 	}
 	
@@ -43,13 +43,13 @@ public class AvionController {
 	 * Métodos de Query
 	 */
 	@GetMapping(value = "avion/horasMilitares", produces = MediaType.TEXT_PLAIN_VALUE)
-	public int getTotalHorasByMilitares() {
-		return servicio.getTotalHorasByMilitares();
+	public String getTotalHorasByMilitares() {
+		return servicio.getTotalHorasByMilitares() + "";
 	}
 	
 	@GetMapping(value = "avion/capacidadAerolinea/{aerolinea}", produces = MediaType.TEXT_PLAIN_VALUE)
-	public int getTotalCapacidadAerolinea(@PathVariable("aerolinea") String aerolinea) {
-		return servicio.getTotalCapacidadAerolinea(aerolinea);
+	public String getTotalCapacidadAerolinea(@PathVariable("aerolinea") String aerolinea) {
+		return servicio.getTotalCapacidadAerolinea(aerolinea) + "";
 	}
 	
 	@GetMapping(value = "avion/comercialesActivos", produces = MediaType.APPLICATION_JSON_VALUE)
