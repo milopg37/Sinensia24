@@ -1,0 +1,25 @@
+1- Crear proyecto y poner dependencias (Starter Web)
+
+2- Definir el modelo (package models)
+
+3- Trabajar con la capa de servicio (package service)
+	3.1 Crear la interfaz
+	3.2 Crear clase que implemente esa interfaz (@Service) (crear RestTemplate y poner Autowired en caso de necesitarlo)
+	
+4- Implementar el controllador (@RestController) (instanciar el service con @Autowired)
+
+5- Configuraciones
+	5.1 Indicar los packages (scanBasePackages)
+	
+	5.2 Crear el @Bean del RestTemplate (en el main)
+	
+		@Bean
+		RestTemplate template() {
+		return new RestTemplate();
+		}
+	
+	5.3 Asignar un nº de puerto valido y libre: server.port= 8000
+	
+6- Probar con Postman
+	http://localhost:7000/{URL}
+	
