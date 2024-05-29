@@ -15,16 +15,31 @@ public class ProductoController {
 	@Autowired
 	ProductoServiceImpl servicio;
 	
+	/**
+	 * Implementando el service, recibe un JSON de todos los Productos
+	 * @return
+	 */
 	@GetMapping(value = "productos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Producto> findAll(){
 		return servicio.findAll();
 	}
 	
+	/**
+	 * Implementando el service, se envia por URl un código de producto y una cantidad
+	 * a restar del stock de ese producto
+	 * @param codProducto
+	 * @param restaStock
+	 */
 	@PutMapping(value = "productos/stock/{codProducto},{restaStock}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void actualizarStock(@PathVariable("codProducto") int codProducto, @PathVariable("restaStock") int restaStock) {
 		servicio.actualizarStock(codProducto, restaStock);
 	}
 	
+	/**
+	 * Implementando el service, se le pasa un ID por URL y devuelve el precio unitario de ese producto
+	 * @param codProducto
+	 * @return
+	 */
 	@GetMapping(value = "productos/precio/{codProducto}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public int obtenerPrecio(@PathVariable("codProducto") int codProducto) {
 		return servicio.obtenerPrecio(codProducto);

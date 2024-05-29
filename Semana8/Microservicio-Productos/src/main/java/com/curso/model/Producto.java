@@ -17,6 +17,7 @@ public class Producto implements Serializable {
 	private String nombre;
 	private int stock;
 	private double precio;
+	private int pedido;
 
 	public Producto() {
 		super();
@@ -27,12 +28,13 @@ public class Producto implements Serializable {
 		this.codProducto = codProducto;
 	}
 
-	public Producto(int codProducto, String nombre, int stock, double precio) {
+	public Producto(int codProducto, String nombre, int stock, double precio, int pedido) {
 		super();
 		this.codProducto = codProducto;
 		this.nombre = nombre;
 		this.stock = stock;
 		this.precio = precio;
+		this.pedido = pedido;
 	}
 
 	public int getCodProducto() {
@@ -63,15 +65,23 @@ public class Producto implements Serializable {
 		this.precio = precio;
 	}
 
-	@Override
-	public String toString() {
-		return "Producto [codProducto=" + codProducto + ", nombre=" + nombre + ", stock=" + stock + ", precio=" + precio
-				+ "]";
+	public int getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(int pedido) {
+		this.pedido = pedido;
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(codProducto);
+	}
+
+	@Override
+	public String toString() {
+		return "Producto [codProducto=" + codProducto + ", nombre=" + nombre + ", stock=" + stock + ", precio=" + precio
+				+ ", pedido=" + pedido + "]";
 	}
 
 	@Override
