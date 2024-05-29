@@ -1,0 +1,1 @@
+INSERT INTO microalmacen.pedidos (cod_pedido, producto, unidades, precio_total) VALUES (1, 'Silla', 3, 340.8);

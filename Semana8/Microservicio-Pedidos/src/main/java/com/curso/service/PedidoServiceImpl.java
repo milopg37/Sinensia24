@@ -1,6 +1,9 @@
 package com.curso.service;
 
+import java.util.Arrays;
 import java.util.List;
+
+import javax.swing.undo.AbstractUndoableEdit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +21,7 @@ public class PedidoServiceImpl implements PedidoService {
 	@Autowired
 	RestTemplate template;
 	
-	 final String BASE_URL = "http://localhost:3306/";
+	 final String BASE_URL = "http://localhost:8000/";
 
 	/**
 	 * Encuentra un pedido por ID y lo devuelve
@@ -54,7 +57,18 @@ public class PedidoServiceImpl implements PedidoService {
 	 */
 	@Override
 	public List<Pedido> createPedido(Pedido pedido) {
-		String url = BASE_URL + "productos/stock/{codProducto},{restaStock}";
+		String urlProd = BASE_URL + "productos/stock/" + pedido.getProducto() + "," + pedido.getUnidades();
+		String urlprecio = BASE_URL + "productos/precio/" + pedido.getProducto();
+		
+		//Ruta al controller de Producto
+		//Actualiza stock
+		template.put(urlProd, null);
+		
+		//Ruta al controller de Producto
+		//Obtiene precio, dado ID de un producto
+		double precio = template.getForObject(urlprecio, Double.class);
+		pedido.setPrecioTotal(precio * pedido.getUnidades());
+		
 		dao.save(pedido);
 		return dao.findAll();
 	}

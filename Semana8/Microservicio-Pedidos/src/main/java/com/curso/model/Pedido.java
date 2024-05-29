@@ -14,7 +14,8 @@ public class Pedido implements Serializable {
 	@Id
 	@Column(name = "cod_pedido")
 	private int codPedido;
-	private String producto;
+	@Column(name = "cod_producto")
+	private int producto;
 	private int unidades;
 	@Column(name = "precio_total")
 	private double precioTotal;
@@ -28,23 +29,22 @@ public class Pedido implements Serializable {
 		this.codPedido = codPedido;
 	}
 
-	public Pedido(int codPedido, String producto, int unidades, double precioTotal) {
+	public Pedido(int codPedido, int producto, int unidades) {
 		super();
 		this.codPedido = codPedido;
 		this.producto = producto;
 		this.unidades = unidades;
-		this.precioTotal = precioTotal;
 	}
 
 	public int getCodPedido() {
 		return codPedido;
 	}
 
-	public String getProducto() {
+	public int getProducto() {
 		return producto;
 	}
 
-	public void setProducto(String producto) {
+	public void setProducto(int producto) {
 		this.producto = producto;
 	}
 

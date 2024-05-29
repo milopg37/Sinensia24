@@ -21,7 +21,7 @@ public class PedidoController {
 	 * @return
 	 */
 	@PostMapping(value = "pedidos/nuevo", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<Pedido> createPedido(Pedido pedido){
+	public List<Pedido> createPedido(@RequestBody Pedido pedido){
 		return servicio.createPedido(pedido);
 	}
 	
