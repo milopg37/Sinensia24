@@ -27,5 +27,5 @@ public interface ProductoDao extends JpaRepository<Producto, Integer> {
 	 * @return
 	 */
 	@Query("SELECT p.precio FROM Producto p WHERE p.codProducto = :codProducto")
-	int obtenerPrecio(@Param("codProducto") int codProducto);
+	double obtenerPrecio(@Param("codProducto") int codProducto);
 }

@@ -30,7 +30,7 @@ public class ProductoController {
 	 * @param codProducto
 	 * @param restaStock
 	 */
-	@PutMapping(value = "productos/stock/{codProducto},{restaStock}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "productos/stock/{codProducto},{restaStock}")
 	public void actualizarStock(@PathVariable("codProducto") int codProducto, @PathVariable("restaStock") int restaStock) {
 		servicio.actualizarStock(codProducto, restaStock);
 	}
@@ -41,7 +41,17 @@ public class ProductoController {
 	 * @return
 	 */
 	@GetMapping(value = "productos/precio/{codProducto}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public int obtenerPrecio(@PathVariable("codProducto") int codProducto) {
+	public double obtenerPrecio(@PathVariable("codProducto") int codProducto) {
 		return servicio.obtenerPrecio(codProducto);
+	}
+	
+	/**
+	 * Implementando el service, busca un producto por ID en URL y lo devuelve
+	 * @param codProducto
+	 * @return
+	 */
+	@GetMapping(value = "productos/{codProducto}")
+	public Producto findProducto(@PathVariable("codProducto") int codProducto) {
+		return servicio.findProducto(codProducto);
 	}
 }

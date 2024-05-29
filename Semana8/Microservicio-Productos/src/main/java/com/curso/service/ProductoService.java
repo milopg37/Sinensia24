@@ -20,5 +20,5 @@ public interface ProductoService {
 	 * Metodos de Querys
 	 */
 	void actualizarStock(int codProducto, int restarStock);
-	int obtenerPrecio(int codProducto);
+	double obtenerPrecio(int codProducto);
 }

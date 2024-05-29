@@ -78,7 +78,7 @@ public class ProductoServiceImpl implements ProductoService {
 	 * Obtiene el precio de un producto dado su ID
 	 */
 	@Override
-	public int obtenerPrecio(int codProducto) {
+	public double obtenerPrecio(int codProducto) {
 		return dao.obtenerPrecio(codProducto);
 	}
 }
