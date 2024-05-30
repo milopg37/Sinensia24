@@ -26,7 +26,7 @@ public class ReservaController {
 	 @GetMapping(value = "/mostrarReservas")
 	    public String mostrarReservas(Model model) {
 	        model.addAttribute("listaReservas", servicio.listarReservas());
-	        return "reservas/mostrarReservas";//Nombre vista html
+	        return "reservas/mostrarReservas";//ruta vista html
 	    }
 	 
 	 /**
@@ -39,6 +39,6 @@ public class ReservaController {
 	        List<Reserva> reservas = servicio.listarReservas();
 	        double precioTotal = servicio.precioTotalReserva(reservas);
 	        model.addAttribute("precioTotal", precioTotal);
-	        return "reservas/precioTotalReservas";//Nombre vista html
+	        return "reservas/precioTotalReservas";//ruta vista html
 	    }
 }

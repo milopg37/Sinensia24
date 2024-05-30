@@ -16,7 +16,6 @@ public class ReservaServiceImpl implements ReservaService {
 	 * Recibe una lista vacia y la rellena con datos estaticos solo para mostrar
 	 */
 	static {
-		
 		listaReservas.add(new Reserva("R001", "Madrid", 2, "Calle Gran Vía 10", "Apartamento", 5, 120.0));
 		listaReservas.add(new Reserva("R002", "Barcelona", 4, "Avenida Diagonal 45", "Casa", 7, 150.0));
 		listaReservas.add(new Reserva("R003", "Valencia", 3, "Calle Colón 8", "Piso", 3, 100.0));
