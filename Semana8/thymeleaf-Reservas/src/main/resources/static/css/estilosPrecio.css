@@ -1,46 +1,45 @@
-  body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+table {
+    width: 80%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+}
 
-        p {
-            font-size: 1.2em;
-            text-align: center;
-            color: #666;
-        }
+table, th, td {
+    border: 1px solid #ddd;
+}
 
-        span {
-            font-weight: bold;
-            color: #4CAF50;
-        }
+th, td {
+    padding: 12px;
+    text-align: left;
+}
 
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            text-align: center;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+th {
+    background-color: #4CAF50;
+    color: white;
+}
 
-        a:hover {
-            background-color: #45a049;
-        }
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-            border-radius: 5px;
-        }
+tr:hover {
+    background-color: #ddd;
+}
+a.volver-lista {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a.volver-lista:hover {
+    background-color: #45a049;
+}

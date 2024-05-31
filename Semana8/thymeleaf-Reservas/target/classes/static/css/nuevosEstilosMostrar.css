@@ -1,8 +1,22 @@
+/* Estilos para el cuerpo y los encabezados */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
 
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para la tabla */
 table {
-    width: 80%; 
-    margin: 20px auto; 
+    width: 80%;
+    margin: 20px auto;
     border-collapse: collapse;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
 
 table, th, td {
@@ -14,19 +28,21 @@ th, td {
     text-align: left;
 }
 
-th {
+thead {
     background-color: #4CAF50;
     color: white;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr:hover {
+tbody tr:hover {
     background-color: #ddd;
 }
-a.volver-lista {
+
+/* Estilos para el enlace */
+a.ver-precio {
     display: block;
     margin-top: 20px;
     margin-left: auto;
@@ -40,6 +56,6 @@ a.volver-lista {
     transition: background-color 0.3s ease;
 }
 
-a.volver-lista:hover {
+a.ver-precio:hover {
     background-color: #45a049;
 }

@@ -32,7 +32,7 @@ public class ReservaServiceImpl implements ReservaService {
 	}
 
 	/**
-	 * Recibe la lista de reservas y saca el precio total de la misma
+	 * Recibe la lista de reservas y saca el precio total de todas
 	 * Multiplicando numDias * precio por noche
 	 */
 	@Override

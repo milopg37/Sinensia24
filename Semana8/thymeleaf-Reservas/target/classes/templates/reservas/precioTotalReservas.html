@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>Precio Total de Reservas</title>
     <link rel="stylesheet" type="text/css" href="/css/estilosPrecio.css">
 </head>
 <body>
-	<div class="container">
-    	<h1>Precio Total de Reservas</h1>
-    	<p>El precio total de todas las reservas es: <span th:text="${precioTotal}"></span> €</p>
-    	<a href="/mostrarReservas">Volver a la lista de reservas</a>
+    <div class="container">
+        <h1>Precio Total de Reservas</h1>
+        
+        <!-- Tabla para mostrar código de reserva y su precio total -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Reserva</th>
+                    <th>Total Reserva</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="reserva : ${listaReservas}">
+                    <td th:text="${reserva.idReserva}"></td>
+                    <td th:text="${reserva.numDias} * ${reserva.precioNoche}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Precio total de todas las reservas -->
+        <p>El precio total de todas las reservas es: <span th:text="${precioTotal}"></span> €</p>
+        
+        <a class="volver-lista" href="/mostrarReservas">Volver a la lista de reservas</a>
     </div>
 </body>
 </html>

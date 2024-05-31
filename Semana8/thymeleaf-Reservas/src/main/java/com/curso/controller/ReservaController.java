@@ -39,6 +39,8 @@ public class ReservaController {
 	        List<Reserva> reservas = servicio.listarReservas();
 	        double precioTotal = servicio.precioTotalReserva(reservas);
 	        model.addAttribute("precioTotal", precioTotal);
+	        model.addAttribute("listaReservas", reservas);
+	        model.addAttribute("precioReservaIndividual", reservas);
 	        return "reservas/precioTotalReservas";//ruta vista html
 	    }
 }
