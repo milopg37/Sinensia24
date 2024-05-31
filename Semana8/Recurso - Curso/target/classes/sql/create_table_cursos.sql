@@ -1,1 +1,0 @@
-CREATE TABLE bdescuela.cursos (codCurso VARCHAR(4) NOT NULL, nombre VARCHAR(45) NULL, duracion INT NULL, precio DOUBLE NULL, PRIMARY KEY (codCurso));
