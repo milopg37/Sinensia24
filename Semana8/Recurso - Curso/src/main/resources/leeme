@@ -1,16 +1,17 @@
-RECURSO: AVIONES
+RECURSO: curso
 
-Vamos a ofrecer un CRUD de aviones más algunas funciones extras utilizando BD con Spring JPA
+Vamos a ofrecer un CRUD de cursos utilizando BD
 
-GET 	--> 	Recuperar
-POST 	--> 	Insertar
-PUT 	--> 	Actualizar
-DELETE 	--> 	Borrar
+GET 	--> 	recuperar
+POST 	--> 	insertar
+PUT 	--> 	actualizar
+DELETE 	--> 	borrar
 
-http://localhost:8080/aviones					GET: Devuelve un avion buscando por ID
-http://localhost:8080/aviones					POST: Agrega un nuevo avion a la BD
-http://localhost:8080/aviones					DELETE: Borra un avion por ID
-http://localhost:8080/aviones					PUT: Modifica parametro capacidad del avion
+http://localhost:8080/cursos/{codCurso}				GET: busca un curso
+http://localhost:8080/cursos/nuevo					POST: da de alta nuevo curso
+http://localhost:8080/cursos/rango					GET: devuelve cursos entre rango precios
+http://localhost:8080/cursos/delete/{codCurso}		DELETE: borra un curso y devuelve lista actualizada
+http://localhost:8080/cursos/udpdate{nuevaDuracion}	PUT: actualiza duracion (horas) de un curso
 
 ORDEN DE CREACION:
 1- Crear proyecto (dependencies) (resources->sql->scripts) (leeme.txt)
