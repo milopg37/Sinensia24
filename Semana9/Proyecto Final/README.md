@@ -31,21 +31,21 @@ Para cada microservicio, actualiza el archivo `application.properties` con la si
 ```
 Cambia spring.application.name y server.port según el microservicio:
 
-Hotel: spring.application.name=Microservicio-Hotel, server.port=8080
-
-Vuelo: spring.application.name=Microservicio-Vuelo, server.port=9090
-
-Reserva: spring.application.name=Microservicio-Reserva, server.port=7070
+  Hotel: spring.application.name=Microservicio-Hotel, server.port=8080
+  
+  Vuelo: spring.application.name=Microservicio-Vuelo, server.port=9090
+  
+  Reserva: spring.application.name=Microservicio-Reserva, server.port=7070
 
 6. USO
  Los microservicios estarán disponibles en los siguientes puertos:
 
-  Microservicio Hotel:
-    `http://localhost:8080`
-  Microservicio Vuelo:
-    `http://localhost:9090`
-  Microservicio Reserva:
-    `http://localhost:7070`
+    Microservicio Hotel:
+      `http://localhost:8080`
+    Microservicio Vuelo:
+      `http://localhost:9090`
+    Microservicio Reserva:
+      `http://localhost:7070`
 
 7. Endpoints de la API
 Microservicio Hotel:
