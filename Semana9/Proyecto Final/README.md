@@ -1,11 +1,11 @@
-# Proyecto Final de Microservicios en Java
+# Proyecto Final de Microservicios en Java ☕
 
-## Descripción del Proyecto
+## Descripción del Proyecto 📑
 
 Este proyecto consiste en tres microservicios desarrollados en Java utilizando Spring Boot y JPA.
 Los microservicios están diseñados para trabajar de manera conjunta, proporcionando una solución escalable y mantenible para una agencia de viajes.
 
-## Arquitectura
+## Arquitectura 🛠️
 
 El proyecto se compone de los siguientes microservicios:
 
@@ -21,7 +21,7 @@ Cada microservicio se comunica entre sí a través de RESTful APIs y utiliza una
   
    comprobar el archivo `resources -> scriptsSQL`
 
-### Configuración de la Base de Datos
+### Configuración de la Base de Datos ⚙️
 
 Para cada microservicio, actualiza el archivo `application.properties` con la siguiente configuración:
 
@@ -39,7 +39,7 @@ Añade `spring.application.name` y `server.port` según el microservicio:
   
   Reserva: `spring.application.name=Microservicio-Reserva`, `server.port=7070`
 
-6. ## USO
+6. ## USO 🧐
  Los microservicios estarán disponibles en las siguientes rutas:
 
     Microservicio Hotel:
@@ -49,7 +49,7 @@ Añade `spring.application.name` y `server.port` según el microservicio:
     Microservicio Reserva:
       `http://localhost:7070`
 
-7.  ## Endpoints de la API
+7.  ## Endpoints de la API 🧫
 Microservicio Hotel:
 ```
     GET /hotel/{idHotel}: Busca un hotel dado su ID y devuelve todos sus datos.
@@ -78,7 +78,7 @@ Microservicio Reserva:
     GET /reserva/reservaByHotel/{hotelABuscar}: Llama al controlador de Hotel mediante un GET y devuelve las reservas existentes para el nombre del hotel dado.
     POST /reserva/reservaByVuelo/{totalPersonas}: Llama al controlador de Vuelo mediante un POST para crear una reserva por vuelo comprobando si quedan plazas y si     es así las reserva y registra la nueva reserva en la BD.
 ```
-8. ## Tecnologías Utilizadas
+8. ## Tecnologías Utilizadas 🧪
   - Java
   - Spring Boot
   - JPA (Hibernate)
@@ -86,8 +86,8 @@ Microservicio Reserva:
   - Maven
   - RestTemplate
     
-9. ## Contacto
+9. ## Contacto ✉️
   Si tienes alguna pregunta o comentario sobre este proyecto, no dudes en contactarme:
 
-  Email: camilo.perezg@viewnext.com
-  GitHub: https://www.github.com/milopg37
+  💻 Email: camilo.perezg@viewnext.com
+  🗃️ GitHub: https://www.github.com/milopg37
