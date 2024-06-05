@@ -85,4 +85,4 @@ Microservicio Reserva:
 Si tienes alguna pregunta o comentario sobre este proyecto, no dudes en contactarme:
 
 Email: camilo.perezg@viewnext.com
-GitHub: github.com/milopg37
+GitHub: https://www.github.com/milopg37
