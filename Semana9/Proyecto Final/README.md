@@ -2,7 +2,8 @@
 
 ## Descripción del Proyecto
 
-Este proyecto consiste en tres microservicios desarrollados en Java utilizando Spring Boot y JPA. Los microservicios están diseñados para trabajar de manera conjunta, proporcionando una solución escalable y mantenible para una agencia de viajes.
+Este proyecto consiste en tres microservicios desarrollados en Java utilizando Spring Boot y JPA.
+Los microservicios están diseñados para trabajar de manera conjunta, proporcionando una solución escalable y mantenible para una agencia de viajes.
 
 ## Arquitectura
 
@@ -11,25 +12,26 @@ El proyecto se compone de los siguientes microservicios:
 1. **Microservicio Hotel**
 2. **Microservicio Vuelo**
 3. **Microservicio Reserva**
+4. **Base de Datos: agenciaviajes -> Tablas: hoteles, vuelos, reservas**
 
 Cada microservicio se comunica entre sí a través de RESTful APIs y utiliza una base de datos MySQL.
 
 4. Configura la base de datos en el archivo `application.properties` de cada microservicio.
-5. Para generar la base de datos y realizar los inserts para tener datos de prueba con los que jugar: comprobar el archivo resources -> scriptsSQL
+5. Para generar la base de datos y realizar los inserts para tener datos de prueba con los que jugar:
+  
+   comprobar el archivo `resources -> scriptsSQL`
 
 ### Configuración de la Base de Datos
 
 Para cada microservicio, actualiza el archivo `application.properties` con la siguiente configuración:
 
 ```properties
-  spring.application.name=Microservicio-Hotel
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
   spring.datasource.url=jdbc:mysql://localhost:3306/agenciaviajes
   spring.datasource.username=root
   spring.datasource.password=root
-  server.port=8080
 ```
-Cambia spring.application.name y server.port según el microservicio:
+Añade `spring.application.name` y `server.port` según el microservicio:
 
   Hotel: `spring.application.name=Microservicio-Hotel`, `server.port=8080`
   
@@ -38,7 +40,7 @@ Cambia spring.application.name y server.port según el microservicio:
   Reserva: `spring.application.name=Microservicio-Reserva`, `server.port=7070`
 
 6. ## USO
- Los microservicios estarán disponibles en los siguientes puertos:
+ Los microservicios estarán disponibles en las siguientes rutas:
 
     Microservicio Hotel:
       `http://localhost:8080`
@@ -87,5 +89,5 @@ Microservicio Reserva:
 9. ## Contacto
   Si tienes alguna pregunta o comentario sobre este proyecto, no dudes en contactarme:
 
-Email: camilo.perezg@viewnext.com
-GitHub: https://www.github.com/milopg37
+  Email: camilo.perezg@viewnext.com
+  GitHub: https://www.github.com/milopg37
